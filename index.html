@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Matriks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Kalkulator Matriks</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </div>
+
+        <div class="main-content">
+            <div class="matrix-section">
+                <h3>Matriks A</h3>
+                <div class="size-controls">
+                    <label>Baris:</label>
+                    <input type="number" id="rowsA" value="2" min="1" max="5" onchange="createMatrix('A')" title="Jumlah baris Matriks A" placeholder="Baris">
+                    <label>Kolom:</label>
+                    <input type="number" id="colsA" value="2" min="1" max="5" onchange="createMatrix('A')" title="Jumlah kolom Matriks A" placeholder="Kolom">
+                </div>
+                <div id="matrixA" class="matrix-input"></div>
+                <div class="utility-buttons">
+                    <button class="btn btn-secondary" onclick="fillRandom('A')">Acak</button>
+                    <button class="btn btn-secondary" onclick="clearMatrix('A')">Kosongkan</button>
+                </div>
+            </div>
+
+            <div class="matrix-section">
+                <h3>Matriks B</h3>
+                <div class="size-controls">
+                    <label>Baris:</label>
+                    <input type="number" id="rowsB" value="2" min="1" max="5" onchange="createMatrix('B')" title="Jumlah baris Matriks B" placeholder="Baris">
+                    <label>Kolom:</label>
+                    <input type="number" id="colsB" value="2" min="1" max="5" onchange="createMatrix('B')" title="Jumlah kolom Matriks B" placeholder="Kolom">
+                </div>
+                <div id="matrixB" class="matrix-input"></div>
+                <div class="utility-buttons">
+                    <button class="btn btn-secondary" onclick="fillRandom('B')">Acak</button>
+                    <button class="btn btn-secondary" onclick="clearMatrix('B')">Kosongkan</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="operations">
+            <h3>Operasi Matriks</h3>
+            <div class="operation-buttons">
+                <button class="btn btn-primary" onclick="calculate('add')">A + B</button>
+                <button class="btn btn-primary" onclick="calculate('subtract')">A - B</button>
+                <button class="btn btn-primary" onclick="calculate('multiply')">A × B</button>
+                <button class="btn btn-primary" onclick="calculate('detA')">Det(A)</button>
+                <button class="btn btn-primary" onclick="calculate('detB')">Det(B)</button>
+                <button class="btn btn-primary" onclick="calculate('transposeA')">A<sup>T</sup></button>
+                <button class="btn btn-primary" onclick="calculate('transposeB')">B<sup>T</sup></button>
+                <button class="btn btn-primary" onclick="calculate('inverseA')">A<sup>-1</sup></button>
+                <button class="btn btn-primary" onclick="calculate('inverseB')">B<sup>-1</sup></button>
+                <button class="btn btn-secondary" onclick="clearResult()">Hapus Hasil</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h3>Hasil Perhitungan</h3>
+            <div id="result" class="result-display">Pilih operasi untuk melihat hasil...</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
