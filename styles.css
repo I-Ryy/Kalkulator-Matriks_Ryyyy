@@ -14,6 +14,8 @@
     --input-bg: #fff;
     --shadow: rgba(0, 0, 0, 0.1);
     --button-hover: rgba(102, 126, 234, 0.1);
+    --author-name-color: hwb(0 27% 73%);
+    --author-nim-color: hwb(0 27% 73%);
 }
 
 [data-theme="dark"] {
@@ -23,6 +25,8 @@
     --input-bg: #4a5568;
     --shadow: rgba(0, 0, 0, 0.3);
     --button-hover: rgba(66, 153, 225, 0.2);
+    --author-name-color: #ffffff;
+    --author-nim-color: #ffffff;
 }
 
 body {
@@ -53,6 +57,85 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 10px;
+}
+
+.author-info {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.author-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--author-name-color);
+    background: var(--card-bg);
+    padding: 10px 24px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px var(--shadow);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.author-name::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.author-name:hover::before {
+    left: 100%;
+}
+
+.author-name:hover {
+    transform: translateY(-3px) scale(1.05);
+   box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+}
+
+.author-nim {
+    font-size: 1.1rem;
+    font-weight: 500;
+    background: var(--card-bg);
+    border: 3px solid rgba(102, 126, 234, 0.3);
+    color: var(--author-nim-color);
+    padding: 10px 24px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25p(102, 126, 234, 0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+} 
+
+.author-nim::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.author-nim:hover::before {
+    left: 100%;
+}
+
+.author-nim:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
 }
 
 .theme-toggle {
